@@ -45,6 +45,35 @@
   </style>
 </head>
 <body>
+<header class="hero">
+  <h1>台灣公共安全防災教育中心</h1>
+</header>
+<style>
+.hero {
+  background-image: url('屏東監視器.png');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(130, 0, 40, 0.7); 
+  z-index: 0;
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 1;
+}
+</style>
 
 <header>
   <h1>台灣公共安全防災教育中心</h1>
