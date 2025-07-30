@@ -11,31 +11,61 @@
       background-color: #fff8f4;
       color: #333;
     }
-    header {
-      background-color: #ae052c;
-      color: rgb(243, 225, 225);
-      padding: 20px;
+
+    header.hero {
+      background-image: url('屏東監視器.png');
+      background-size: cover;
+      background-position: center;
+      padding: 60px 0;
       text-align: center;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      position: relative;
     }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(130, 0, 40, 0.7); 
+      z-index: 0;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+    }
+
     nav {
       background-color: #f6e4e9;
       padding: 10px;
       text-align: center;
     }
+
     nav a {
       margin: 0 15px;
       color: #c63d59;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
     }
+
     section {
+      display: none;
       padding: 40px 20px;
       max-width: 800px;
       margin: auto;
     }
+
+    section.active {
+      display: block;
+    }
+
     h2 {
       color: #c63d59;
     }
+
     footer {
       background-color: #f4a7b9;
       color: white;
@@ -45,57 +75,33 @@
   </style>
 </head>
 <body>
+
 <header class="hero">
   <h1>台灣公共安全防災教育中心</h1>
 </header>
-<style>
-.hero {
-  background-image: url('屏東監視器.png');
-  background-size: cover;
-  background-position: center;
-  padding: 60px 0;
-  text-align: center;
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(130, 0, 40, 0.7); 
-  z-index: 0;
-}
-
-.hero h1 {
-  position: relative;
-  z-index: 1;
-}
-</style>
 
 <nav>
-  <a href="#about">關於我們</a>
-  <a href="#events">活動介紹</a>
-  <a href="#contact">聯絡資訊</a>
+  <a onclick="showSection('about')">關於我們</a>
+  <a onclick="showSection('events')">活動介紹</a>
+  <a onclick="showSection('contact')">聯絡資訊</a>
 </nav>
 
-<section id="about">
+<section id="about" class="active">
   <div style="text-align: center;">
-  <img src="屏東監視器.png" alt="講習照片" style="opacity: 0.7; width: 400px; border-radius: 10px; box-shadow: 0 0 10px gray;">
-</div>
+    <img src="屏東監視器.png" alt="講習照片" style="opacity: 0.7; width: 400px; border-radius: 10px; box-shadow: 0 0 10px gray;">
+  </div>
   <h2>關於我們</h2>
-  <li>台灣公共安全防災教育中心致力於推廣國內各場所防火安全，以及避難逃生認知與技巧，並協助事業單位提升員工對於火災逃生應變水準，保障自身、親友及家園安全與健康，不定期舉辦防火安全及職場安全教育訓練、救護CPR、AED演練操作、災害應變與逃生要領等講座，為維護工作職場及居家安全，以避免類似不幸事件再次發生。</li>
-<li>本中心為專業學術研究團體，長年致力於協助緊急救護與重大公安災害防治之輔導
-工作，並於各年度擴大舉辦巡迴宣導講座服務，期使人人了解、重視緊急應變與安
-全救護的重要性。</li>
+  <ul>
+    <li>台灣公共安全防災教育中心致力於推廣國內各場所防火安全，以及避難逃生認知與技巧，並協助事業單位提升員工對於火災逃生應變水準，保障自身、親友及家園安全與健康，不定期舉辦防火安全及職場安全教育訓練、救護CPR、AED演練操作、災害應變與逃生要領等講座，為維護工作職場及居家安全，以避免類似不幸事件再次發生。</li>
+    <li>本中心為專業學術研究團體，長年致力於協助緊急救護與重大公安災害防治之輔導</li>
+  </ul>
 </section>
 
 <section id="events">
   <h2>活動介紹</h2>
-  <li>職災救護宣導講座，一年一度安全講習</li>
-  <li>本中心自106年起計畫針對重大公安事故衍生之災害案件，為大小企業辦理年度防災救護講習,
+  <ul>
+    <li>職災救護宣導講座，一年一度安全講習</li>
+    <li>本中心自106年起計畫針對重大公安事故衍生之災害案件，為大小企業辦理年度防災救護講習，
 以避免類似慘案一再發生，促請共同遵循，期能有效防災、應變、以確保社會大眾
 生命財產安全。</li>
   </ul>
@@ -103,16 +109,25 @@
 
 <section id="contact">
   <h2>聯絡資訊</h2>
-  <li>如需舉辦講習，歡迎來電洽詢，將由本中心指派專業教官至各單位宣導，全部義務演講，費用均由本
-中心年度预算支付，貴單位毋需缴付任何費用。</li>
+  <ul>
+    <li>如需舉辦講習，歡迎來電洽詢，將由本中心指派專業教官至各單位宣導，全部義務演講，費用均由本中心年度預算支付，貴單位毋需缴付任何費用。</li>
+  </ul>
   <p>📞 電話：02-87323853</p>
-  <p></p>
-  <p></p>
 </section>
 
 <footer>
   <p>&copy; 2025 台灣公共安全防災教育中心</p>
 </footer>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll("section");
+    sections.forEach(section => {
+      section.classList.remove("active");
+    });
+    document.getElementById(id).classList.add("active");
+  }
+</script>
 
 </body>
 </html>
