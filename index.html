@@ -72,6 +72,22 @@
       text-align: center;
       padding: 10px;
     }
+    section {
+  display: none;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
   </style>
 </head>
 <body>
@@ -124,10 +140,16 @@
     const sections = document.querySelectorAll("section");
     sections.forEach(section => {
       section.classList.remove("active");
+      section.style.display = "none"; 
     });
-    document.getElementById(id).classList.add("active");
+
+    const target = document.getElementById(id);
+    target.style.display = "block"; 
+    void target.offsetWidth;
+    target.classList.add("active");
   }
 </script>
 
 </body>
 </html>
+
