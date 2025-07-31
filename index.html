@@ -1,86 +1,157 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>講習資訊頁面</title>
+  <title>台灣公共安全防災教育中心</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Arial", sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      background-color: #fff8f4;
+      color: #333;
     }
 
-    header {
-      background-color: #1e88e5;
-      color: white;
-      padding: 30px;
+    header.hero {
+      background-image: url('屏東監視器.png');
+      background-size: cover;
+      background-position: center;
+      padding: 60px 0;
       text-align: center;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(130, 0, 40, 0.7); 
+      z-index: 0;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      background-color: #f6e4e9;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #c63d59;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     section {
+      display: none;
       padding: 40px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      background-color: white;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      max-width: 800px;
+      margin: auto;
     }
 
-    section h2 {
-      color: #1e88e5;
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      color: #c63d59;
+    }
+
+    footer {
+      background-color: #f4a7b9;
+      color: white;
       text-align: center;
+      padding: 10px;
     }
+    section {
+  display: none;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
-    #contact {
-      text-align: center;
-    }
+section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    #contact img {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 12px;
-      margin-top: 20px;
-      transition: transform 0.4s ease;
-    }
-
-    #contact img:hover {
-      transform: scale(1.03);
-    }
-
-    #contact ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 20px;
-    }
-
-    #contact li {
-      font-size: 1.1em;
-      margin-bottom: 10px;
-    }
-
-    #contact p {
-      margin-top: 20px;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>講習活動資訊</h1>
-  </header>
+<header class="hero">
+  <h1>台灣公共安全防災教育中心</h1>
+</header>
 
-  <section id="contact">
-    <h2>聯絡資訊</h2>
-    <img src="2.jpg" alt="講習照片">
-    <ul>
-      <li>如需舉辦講習，歡迎來電洽詢，將由本中心指派專業教官至各單位宣導，全部義務演講，費用均由本中心年度預算支付，貴單位毋需繳付任何費用。</li>
-    </ul>
-    <p>📞 電話：02-87323853</p>
-  </section>
+<nav>
+  <a onclick="showSection('about')">關於我們</a>
+  <a onclick="showSection('events')">活動介紹</a>
+  <a onclick="showSection('contact')">聯絡資訊</a>
+</nav>
+
+<section id="about" class="active">
+  <div style="text-align: center;">
+    <img src="屏東監視器.png" alt="講習照片" style="opacity: 0.7; width: 400px; border-radius: 10px; box-shadow: 0 0 10px gray;">
+  </div>
+  <h2>關於我們</h2>
+  <ul>
+    <li>台灣公共安全防災教育中心致力於推廣國內各場所防火安全，以及避難逃生認知與技巧，並協助事業單位提升員工對於火災逃生應變水準，保障自身、親友及家園安全與健康，不定期舉辦防火安全及職場安全教育訓練、救護CPR、AED演練操作、災害應變與逃生要領等講座，為維護工作職場及居家安全，以避免類似不幸事件再次發生。</li>
+    <li>本中心為專業學術研究團體，長年致力於協助緊急救護與重大公安災害防治之輔導</li>
+  </ul>
+</section>
+
+<section id="events">
+  <h2>活動介紹</h2>
+  <ul>
+    <li>職災救護宣導講座，一年一度安全講習</li>
+    <li>本中心自106年起計畫針對重大公安事故衍生之災害案件，為大小企業辦理年度防災救護講習，
+以避免類似慘案一再發生，促請共同遵循，期能有效防災、應變、以確保社會大眾
+生命財產安全。</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>聯絡資訊</h2>
+  <div style="text-align: center;">
+    <img src="2.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
+  </div>
+  <ul style="text-align: center; list-style: none; padding: 0;">
+    <li>如需舉辦講習，歡迎來電洽詢，將由本中心指派專業教官至各單位宣導，全部義務演講，費用均由本中心年度預算支付，貴單位毋需缴付任何費用。</li>
+  </ul>
+  <p style="text-align: center;">📞 電話：02-87323853</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 台灣公共安全防災教育中心</p>
+</footer>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll("section");
+    sections.forEach(section => {
+      section.classList.remove("active");
+      section.style.display = "none"; 
+    });
+
+    const target = document.getElementById(id);
+    target.style.display = "block"; 
+    void target.offsetWidth;
+    target.classList.add("active");
+  }
+</script>
 
 </body>
 </html>
