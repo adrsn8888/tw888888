@@ -56,14 +56,20 @@
       padding: 40px 20px;
       max-width: 800px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     section.active {
       display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
       color: #c63d59;
+      text-align: center;
     }
 
     footer {
@@ -72,22 +78,22 @@
       text-align: center;
       padding: 10px;
     }
-    section {
-  display: none;
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
 
-section.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
+    .photo-box {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 12px;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
@@ -103,8 +109,8 @@ section.active {
 </nav>
 
 <section id="about" class="active">
-  <div style="text-align: center;">
-    <img src="31.png" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
+  <div class="photo-box">
+    <img src="31.png" alt="講習照片">
   </div>
   <h2>關於我們</h2>
   <ul>
@@ -115,52 +121,28 @@ section.active {
 
 <section id="events">
   <h2>活動介紹</h2>
-  <div style="text-align: center;">
-    <img src="2.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
-  <div style="text-align: center;">
-    <img src="1.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
-  <div style="text-align: center;">
-    <img src="3.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
-  <div style="text-align: center;">
-    <img src="32.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
-  <div style="text-align: center;">
-    <img src="11.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
-  <div style="text-align: center;">
-    <img src="12.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
-  <div style="text-align: center;">
-    <img src="41.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
-  <div style="text-align: center;">
-    <img src="42.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
-   <div style="text-align: center;">
-    <img src="43.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
-   <div style="text-align: center;">
-    <img src="44.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
+
+  <div class="photo-box"><img src="2.jpg" alt="講習照片"></div>
+  <div class="photo-box"><img src="1.jpg" alt="講習照片"></div>
+  <div class="photo-box"><img src="3.jpg" alt="講習照片"></div>
+  <div class="photo-box"><img src="32.jpg" alt="講習照片"></div>
+  <div class="photo-box"><img src="11.jpg" alt="講習照片"></div>
+  <div class="photo-box"><img src="12.jpg" alt="講習照片"></div>
+  <div class="photo-box"><img src="41.jpg" alt="講習照片"></div>
+  <div class="photo-box"><img src="42.jpg" alt="講習照片"></div>
+  <div class="photo-box"><img src="43.jpg" alt="講習照片"></div>
+  <div class="photo-box"><img src="44.jpg" alt="講習照片"></div>
+
   <ul>
     <li>防災救護宣導講座，一年一度安全講習</li>
-    <li>本中心自108年起計畫針對重大公安事故衍生之災害案件，為大小企業辦理年度防災救護講習，
-以避免類似慘案一再發生，促請共同遵循，期能有效防災、應變、以確保社會大眾
-生命財產安全。</li>
+    <li>本中心自108年起計畫針對重大公安事故衍生之災害案件，為大小企業辦理年度防災救護講習，以避免類似慘案一再發生，促請共同遵循，期能有效防災、應變、以確保社會大眾生命財產安全。</li>
   </ul>
 </section>
 
 <section id="contact">
   <h2>聯絡資訊</h2>
-  <div style="text-align: center;">
-    <img src="21.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
-  <div style="text-align: center;">
-    <img src="22.jpg" alt="講習照片" style="width:100%; max-width:600px; border-radius:12px; margin-top:20px;">
-  </div>
+  <div class="photo-box"><img src="21.jpg" alt="講習照片"></div>
+  <div class="photo-box"><img src="22.jpg" alt="講習照片"></div>
   <ul>
     <li>如需舉辦講習，歡迎來電洽詢，將由本中心指派專業教官至各單位宣導，全部義務演講，貴單位毋需缴付任何費用。</li>
     <li>📞 電話：02-87323853</li>
