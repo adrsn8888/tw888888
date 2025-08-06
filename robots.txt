@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tpsd.tw/sitemap.xml
